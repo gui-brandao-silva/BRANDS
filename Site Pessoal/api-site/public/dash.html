@@ -65,8 +65,12 @@
           <option value="bone">Boné</option>
           <option value="caneca">Caneca</option>
         </select> <br>
+
+
         Quantas unidades você venderá?
-        <input type="number" id="quantidade"><br>
+        <div  id="quantidade"></div><br>
+
+
         <button onclick="lucros()">Mostrar Lucros</button>
       </div>
     
@@ -86,7 +90,20 @@
 </html>
 
 <script>
+
+  
   a_usuario.innerHTML = sessionStorage.NOME_USUARIO
+
+  quantidade.innerHTML = sessionStorage.venda
+
+  var vendashow = Number(sessionStorage.venda)
+
+
+ function lucros(){
+
+
+
+ }
 
   function mus1() {
     window.open('https://www.youtube.com/watch?v=Q0oIoR9mLwc')
@@ -143,5 +160,5 @@
     window.open('https://www.youtube.com/watch?v=KtlgYxa6BMU')
   }
 
-  function lucros(){}
+ 
 </script>
