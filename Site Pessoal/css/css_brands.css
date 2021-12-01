@@ -1,0 +1,48 @@
+
+
+
+
+.banner-login{
+    color: gainsboro;
+}
+.selecionado{
+    font-weight: bolder;
+}
+.fundo{
+        background-position: center;
+        background-repeat: no-repeat;
+            box-sizing: border-box;
+            float: left;
+        
+}
+
+.tocador{
+        margin-left: 75vw;
+        margin-top: 88vh;
+        align-self: center;
+
+}
+
+.navbar{
+    width: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    list-style-type: none;
+}
+
+.navbar .lista{
+    color: #ffee00;
+}
+
+
+
+
+
+
+.footer{
+    color: gainsboro;
+    font-weight: bolder;
+    background-color: #000000;
+}
+

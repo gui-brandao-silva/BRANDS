@@ -1,0 +1,41 @@
+* {
+	padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+/** Header **/
+.header{
+    color: #000000;
+    border-bottom: 4px solid #ffee00;
+    font-weight: bolder;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #000;
+    width: 100%;
+}
+
+
+
+/** Corpo **/
+
+
+body{
+    background-image: url(https://wallpaperaccess.com/full/3879757.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+}
+
+.banner .container{
+background: rgba( 145, 137, 137, 0.2 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 3px );
+-webkit-backdrop-filter: blur( 3px );
+border-radius: 10px;
+
+}
+/** Footer **/
+
+
+/** Dashboard **/
+

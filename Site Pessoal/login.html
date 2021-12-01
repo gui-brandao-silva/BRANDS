@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Página Login</title>
+
+    <link rel="stylesheet" href="./css/brands.css" />
+  </head>
+
+  <body class="imgfundolog">
+    <!--Header-->
+    <div class="header">
+      <div class="container">
+        <a href="./index.html">
+          <img src="./Imagens/Logo Brands.jpg" width="230px" />
+        </a>
+        <ul class="navbar">
+          <li>
+            <a href="./index.html"> Início </a>
+          </li>
+          <li>|</li>
+          <li class="agora">
+            <a href="./login.html">Login</a>
+          </li>
+          <li>
+            <a href="./Cadastro.html">Cadastro</a>
+          </li>
+          <li>
+            <a href="./sobre.html">O Fundador</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!--Corpo-->
+    <div
+      class="banner-login"
+      style="
+        background-image: url(./Imagens/login\ 21.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+      "
+    >
+      <div class="container">
+        <div class="card medio">
+          <h2>Olá de volta!</h2>
+          <div class="formulario">
+            <form id="form_login">
+              E-mail:
+              <input id="email_input" type="text" placeholder="Login" />
+              <br />
+              Senha:
+              <input id="senha_input" type="password" placeholder="******" />
+              <br />
+              <button class="btn" onclick="entrar()" type="submit">
+                Entrar
+              </button>
+              <a href="./Cadastro2.0.html"> Ainda não estou cadastrado</a>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="tocador">
+        <audio controls loop>
+          <source
+            src="./Músicas/Dire Straits - Sultans Of Swing.mp3"
+            type="audio/ogg"
+          />
+        </audio>
+      </div>
+    </div>
+
+    <!--Música início-->
+
+    <!--Footer-->
+    <div class="footer">
+      <div class="container">
+        <ul class="navbar">
+        <a>Feito com suor por Guilherme Brandão Silva &copy; 2021</a>
+        <a>/</a>
+        <a href=""> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWDMtvMHM_-jQsSAA_Ewx5dHy92ZvjQLkFNrmxvP3kMK6oHJNmNaxk0uQzIUkszn26znc&usqp=CAU" width="50px"> </a>
+        <a href="https://www.linkedin.com/in/guilherme-duarte-brand%C3%A3o-sim%C3%B5es-silva-437348183"> <img src="https://www.iconsdb.com/icons/preview/yellow/linkedin-5-xxl.png" width="35px"> </a>
+        </ul>
+      </div>
+    </div>
+  </body>
+
+</html>
+
+<script>
+    function entrar() {
+
+
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        // TODO: VERIFICAR AS VALIDAÇÕES QUE ELES ESTÃO APRENDENDO EM ALGORITMOS 
+        if (emailVar == "" || senhaVar == "") {
+            window.alert("Preencha todos os campos para prosseguir!");
+            return false;
+        }
+
+        if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1) {
+            window.alert("Ops, e-mail inválido! Verifique e tente novamente.");
+            return false;
+        }
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+
+                    setTimeout(function () {
+                        window.location = "./cadastro_emocoes.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+
+    function cadastro() {
+
+window.location.href = "./cadastro_emocoes.html"
+
+
+}
+
+</script>
