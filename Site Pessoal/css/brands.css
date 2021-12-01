@@ -258,6 +258,16 @@ form {
 }
 
 
+/* Sobre mim */
+.banner1 .container1 {
+  color: #ffee00;
+}
+
+
+.banner2 .container2{
+  color: #ffee00;
+  font: bold;
+}
 /* Dashboard */
 .dashbody{
   background-color: #ffee00;
@@ -265,7 +275,7 @@ form {
   width: 99vw;
   display: flex ;
   justify-content: space-evenly; 
-  text-decoration: none;
+
 }
 
 .bandas{
@@ -274,6 +284,7 @@ form {
   width: 45%;
   height: 100%;
   text-align: center;
+  text-decoration: none;
 }
 
 .metrics{

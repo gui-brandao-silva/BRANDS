@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sua área</title>
   <link rel="stylesheet" href="./css/brands.css" />
+  <link rel="icon" href="./Imagens/R amarelo.jpg">
 </head>
 
 <body>
@@ -38,6 +39,7 @@
   <div class="dashbody">
 
       <div class="bandas">
+        <div style="height: 15vh;"></div>
         <h1>Nosso Festival</h1>
         <h1><a href="" onclick="mus1()">Red Hot Chilli Peppers</a> - <a href="" onclick="mus2()">Dua Lipa</a></h1>
         <h2><a href="" onclick="mus3()">Twenty One Pilots</a> - <a href="" onclick="mus4()">Billie Eilish </a> - <a
@@ -57,7 +59,17 @@
 
    
       <div class="metrics">
+        Quail produto você quer informacões? 
+        <select id="sel_produto">
+          <option value="camiseta">Camiseta</option>
+          <option value="bone">Boné</option>
+          <option value="caneca">Caneca</option>
+        </select> <br>
+        Quantas unidades você venderá?
+        <input type="number" id="quantidade"><br>
+        <button onclick="lucros()">Mostrar Lucros</button>
       </div>
+    
 
   </div>
   <!--Footer-->
@@ -137,4 +149,6 @@
   function mus18() {
     window.open('https://www.youtube.com/watch?v=KtlgYxa6BMU')
   }
+
+  function lucros(){}
 </script>
