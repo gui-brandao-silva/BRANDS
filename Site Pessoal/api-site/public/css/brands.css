@@ -252,7 +252,7 @@ input {
   align-self: center;
 }
 
-form {
+.formulario {
   display: flex;
   flex-direction: column;
 }
@@ -268,13 +268,20 @@ form {
   text-decoration: none;
 }
 
+a {
+  color: #ffee00;
+}
+
 .bandas{
   background-color: black;
   color: #ffee00;
   width: 45%;
   height: 100%;
- 
   text-align: center;
+}
+
+.a_usuario{
+  text-decoration: underline;
 }
 
 .metrics{

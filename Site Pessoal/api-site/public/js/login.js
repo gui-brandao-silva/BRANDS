@@ -6,6 +6,8 @@ function entrar() {
     console.log("FORM LOGIN: ", formulario.get("login"));
     console.log("FORM SENHA: ", formulario.get("senha"));
 
+    alert('amigo estou aqui 2')
+
     fetch("/usuarios/autenticar", {
         method: "POST",
         body: formulario
