@@ -38,41 +38,43 @@
   <!-- Body-->
   <div class="dashbody">
 
-      <div class="bandas">
-        <div style="height: 15vh;"></div>
-        <h1>Nosso Festival</h1>
-        <h1><a href="" onclick="mus1()">Red Hot Chilli Peppers</a> - <a href="" onclick="mus2()">Dua Lipa</a></h1>
-        <h2><a href="" onclick="mus3()">Twenty One Pilots</a> - <a href="" onclick="mus4()">Billie Eilish </a> - <a
-            href="" onclick="mus5()">Travis Scott</a></h2>
-        <h2><a href="" onclick="mus6()">Post Malone</a> - <a href="" onclick="mus7()">Alok</a> - <a href=""
-            onclick="mus8()">Milky Chance</a> - <a href="" onclick="mus9()">Sam Smith</a></h2>
-        <h3><a href="" onclick="mus10()">Arctic Monkeys</a> - <a href="" onclick="mus11()">Skank</a> - <a href=""
-            onclick="mus12()">Ed Sheeran</a> - <a href="" onclick="mus13()">Miley Cyrus</a> - <a href=""
-            onclick="mus14()">Halsey</a></h3>
-        <h4><a href="" onclick="mus15()">Cage The Elephant</a> - <span id="a_usuario">Wallows</span> - <a href=""
-            onclick="mus16()">Clairo</a> - <a href="" onclick="mus17()">Vance Joy</a> - <a href=""
-            onclick="mus18()">Lord
-            Huron</a></h4>
-      </div>
+    <div class="bandas">
+      <div style="height: 15vh;"></div>
+      <h1>Nosso Festival</h1>
+      <h1><a href="" onclick="mus1()">Red Hot Chilli Peppers</a> - <a href="" onclick="mus2()">Dua Lipa</a></h1>
+      <h2><a href="" onclick="mus3()">Twenty One Pilots</a> - <a href="" onclick="mus4()">Billie Eilish </a> - <a
+          href="" onclick="mus5()">Travis Scott</a></h2>
+      <h2><a href="" onclick="mus6()">Post Malone</a> - <a href="" onclick="mus7()">Alok</a> - <a href=""
+          onclick="mus8()">Milky Chance</a> - <a href="" onclick="mus9()">Sam Smith</a></h2>
+      <h3><a href="" onclick="mus10()">Arctic Monkeys</a> - <a href="" onclick="mus11()">Skank</a> - <a href=""
+          onclick="mus12()">Ed Sheeran</a> - <a href="" onclick="mus13()">Miley Cyrus</a> - <a href=""
+          onclick="mus14()">Halsey</a></h3>
+      <h4><a href="" onclick="mus15()">Cage The Elephant</a> - <span id="a_usuario">Wallows</span> - <a href=""
+          onclick="mus16()">Clairo</a> - <a href="" onclick="mus17()">Vance Joy</a> - <a href="" onclick="mus18()">Lord
+          Huron</a></h4>
+    </div>
 
 
 
-   
-      <div class="metrics">
-        Quail produto você quer informacões? 
-        <select id="sel_produto">
-          <option value="camiseta">Camiseta</option>
-          <option value="bone">Boné</option>
-          <option value="caneca">Caneca</option>
-        </select> <br>
 
+    <div class="metrics">
+      <div style="height: 8vh;"></div>
+      Quail produto você quer informacões? <br>
+      <select id="sel_produto"
+        style="background-color: rgb(46, 46, 46); color: #ffee00; width: 100px; height: 30px;"><br>
+        <option value="camiseta">Camiseta</option>
+        <option value="bone">Boné</option>
+        <option value="caneca">Caneca</option>
+      </select> <br>
 
-        Quantas unidades você venderá?
-        <div  id="quantidade"></div><br>
+      Quantas unidades você venderá? <br>
+      <input type="number" id="vendashow"
+        style="background-color: rgb(46, 46, 46); color: #ffee00; width: 100px; height: 30px;"><br>
+      <!--<div  id="quantidade"></div><br>-->
 
-
-        <button onclick="lucros()">Mostrar Lucros</button>
-      </div>
+      <button class="btn" onclick="lucros()">Mostrar Lucros</button><br><br>
+      <div id="msg"></div>
+    </div>
     
 
   </div>
@@ -88,22 +90,47 @@
 </body>
 
 </html>
-
+<!-- quantidade.innerHTML = sessionStorage.venda-->
+<!--  var vendashow = Number(sessionStorage.venda) -->
 <script>
 
-  
+
   a_usuario.innerHTML = sessionStorage.NOME_USUARIO
-
-  quantidade.innerHTML = sessionStorage.venda
-
-  var vendashow = Number(sessionStorage.venda)
-
-
- function lucros(){
+ 
 
 
 
- }
+  function lucros() {
+
+var vendas = vendashow.value;
+var total1 = vendas * 45;
+var total2 = vendas * 25;
+var total3 = vendas * 30;
+
+if (sel_produto.value == 'camiseta') {
+
+    msg.innerHTML = `<b> O total bruto gerado será de R$ ${total1}<br><br><br>
+O total para o festival será de R$ ${((total1) * 0.2).toFixed(1)} (20% do valor)<br><br><br>
+O total para a sua banda será de R$ ${((total1) * 0.7).toFixed(1)} (80% do valor)<br><br><br>
+Um total de R$ ${((total1) * 0.1).toFixed(1)} ficará para o governo (10% em impostos)</b>`;
+}
+
+else if (sel_produto.value == 'caneca') {
+
+    msg.innerHTML = `<b> O total bruto gerado será de R$ ${total2}<br><br><br>
+O total para o festival será de R$ ${((total2) * 0.2).toFixed(1)} (20% do valor)<br><br><br>
+O total para a sua banda será de R$ ${((total2) * 0.7).toFixed(1)} (80% do valor)<br><br><br>
+Um total de R$ ${((total2) * 0.1).toFixed(1)} ficará para o governo (10% em impostos)</b>`;
+}
+
+else if (sel_produto.value == 'bone') {
+
+    msg.innerHTML = `<b> O total bruto gerado será de R$ ${total3}<br><br><br>
+O total para o festival será de R$ ${((total3) * 0.2).toFixed(1)} (20% do valor)<br><br><br>
+O total para a sua banda será de R$ ${((total3) * 0.7).toFixed(1)} (80% do valor)<br><br><br>
+Um total de R$ ${((total3) * 0.1).toFixed(1)} ficará para o governo (10% em impostos)</b>`;
+}
+}
 
   function mus1() {
     window.open('https://www.youtube.com/watch?v=Q0oIoR9mLwc')
@@ -160,5 +187,5 @@
     window.open('https://www.youtube.com/watch?v=KtlgYxa6BMU')
   }
 
- 
+
 </script>

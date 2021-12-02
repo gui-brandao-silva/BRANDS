@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="metrics">
+        <div style="height: 8vh;"></div>
+        Quail produto você quer informacões? <br>
+        <select id="sel_produto"
+            style="background-color: rgb(46, 46, 46); color: #ffee00; width: 100px; height: 30px;"><br>
+            <option value="camiseta">Camiseta</option>
+            <option value="bone">Boné</option>
+            <option value="caneca">Caneca</option>
+        </select> <br>
+
+        Quantas unidades você venderá? <br>
+        <input type="number" id="vendashow"
+            style="background-color: rgb(46, 46, 46); color: #ffee00; width: 100px; height: 30px;"><br>
+        <!--<div  id="quantidade"></div><br>-->
+
+        <button class="btn" onclick="lucros()">Mostrar Lucros</button>
+    </div>
+    <div id="msg"></div>
+
+</body>
+
+</html>
+
+<script>
+
+    function lucros() {
+
+        var vendas = vendashow.value;
+        var total1 = vendas * 45;
+        var total2 = vendas * 25;
+        var total3 = vendas * 30;
+
+        if (sel_produto.value == 'camiseta') {
+
+            msg.innerHTML = `<b> O total bruto gerado será de R$ ${total1}<br>
+        O total para o festival será de R$ ${((total1) * 0.2).toFixed(1)} (20% do valor)<br>
+        O total para a sua banda será de R$ ${((total1) * 0.7).toFixed(1)} (80% do valor)<br>
+        Um total de R$ ${((total1) * 0.1).toFixed(1)} ficará para o governo (10% em impostos)</b>`;
+        }
+
+        else if (sel_produto.value == 'caneca') {
+
+            msg.innerHTML = `<b> O total bruto gerado será de R$ ${total2}<br>
+        O total para o festival será de R$ ${((total2) * 0.2).toFixed(1)} (20% do valor)<br>
+        O total para a sua banda será de R$ ${((total2) * 0.7).toFixed(1)} (80% do valor)<br>
+        Um total de R$ ${((total2) * 0.1).toFixed(1)} ficará para o governo (10% em impostos)</b>`;
+        }
+
+        else if (sel_produto.value == 'bone') {
+
+            msg.innerHTML = `<b> O total bruto gerado será de R$ ${total3}<br>
+        O total para o festival será de R$ ${((total3) * 0.2).toFixed(1)} (20% do valor)<br>
+        O total para a sua banda será de R$ ${((total3) * 0.7).toFixed(1)} (80% do valor)<br>
+        Um total de R$ ${((total3) * 0.1).toFixed(1)} ficará para o governo (10% em impostos)</b>`;
+        }
+    }
+
+
+</script>
