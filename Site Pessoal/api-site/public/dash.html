@@ -68,9 +68,9 @@
       </select> <br>
 
       Quantas unidades você venderá? <br>
-      <input type="number" id="vendashow"
-        style="background-color: rgb(46, 46, 46); color: #ffee00; width: 100px; height: 30px;"><br>
-      <!--<div  id="quantidade"></div><br>-->
+      <div  id="quantidade"></div><br>
+      <!--<input type="number" id="vendashow"
+        style="background-color: rgb(46, 46, 46); color: #ffee00; width: 100px; height: 30px;"><br>-->
 
       <button class="btn" onclick="lucros()">Mostrar Lucros</button><br><br>
       <div id="msg"></div>
@@ -90,22 +90,21 @@
 </body>
 
 </html>
-<!-- quantidade.innerHTML = sessionStorage.venda-->
-<!--  var vendashow = Number(sessionStorage.venda) -->
+<!-- -->
+<!-- -->
 <script>
 
 
   a_usuario.innerHTML = sessionStorage.NOME_USUARIO
- 
-
-
+  quantidade.innerHTML = sessionStorage.venda
+var vendashow = Number(sessionStorage.getItem('venda')); 
 
   function lucros() {
 
-var vendas = vendashow.value;
-var total1 = vendas * 45;
-var total2 = vendas * 25;
-var total3 = vendas * 30;
+
+var total1 = vendashow * 45;
+var total2 = vendashow * 25;
+var total3 = vendashow * 30;
 
 if (sel_produto.value == 'camiseta') {
 
